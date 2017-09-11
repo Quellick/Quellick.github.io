@@ -5,7 +5,7 @@ permalink: /contact/
 feature-img: "img/color.png"
 ---
 
-Bacon ipsum dolor amet filet mignon meatball spare ribs fatback bacon shankle. Kielbasa andouille fatback salami, boudin bresaola pig alcatra turkey spare ribs jerky. Corned beef bresaola leberkas salami alcatra beef landjaeger venison shank bacon meatloaf beef ribs picanha. Leberkas sausage brisket porchetta shankle prosciutto chicken picanha kielbasa pig kevin t-bone turducken filet mignon jowl.
+Hello,  My name is Zachery Tucker Platt.  Feel free to contact me if you have questions about anything on this site or if you just have some questions.
 
 <form action="https://getsimpleform.com/messages?form_api_token=2287d7d1e5adaf12a3418247f8e4c923" method="post">
   <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
