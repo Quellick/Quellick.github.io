@@ -1,13 +1,13 @@
 ---
 layout: post
 title: BlocJams
-thumbnail-path: "img/blocflix.png"
+thumbnail-path: "img/blocjams.png"
 short-description: BlocJams is a Spotify replica for finding the best music and listening to it online.
 
 ---
 
 {:.center}
-![]({{ site.baseurl }}/img/blocflix.png)
+![]({{ site.baseurl }}/img/blocjams.png)
 
 ## Summary
 
