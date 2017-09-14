@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Adding Google Analytics to a Jekyll blow
+title: Adding Google Analytics to a Jekyll
 ---
 
 I needed to add google analytics to my Jekyll portfolio page so I could see if anyone was viewing it.  I have used google analytics on other website so I am familiar with the process,  but it is slightly different using a Jekyll page as it has the _config.yml file.  Upon opening the file and looking at all the settings, this file has many empty fields to be filled in with various account and user information from around the web.  But if you scroll down to the SCRIPTs section of the file you should notice this block of code.
