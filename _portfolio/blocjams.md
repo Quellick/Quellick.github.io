@@ -21,10 +21,44 @@ I set up each page as instructed and was given a code challenge for each section
 
 Throughout each challenge new concepts where introduced, I had to learn and assimilate them into my pages.  We also had to refactor our vanilla JavaScript into JQuery to reduce the number of lines of code on the page.  I also had an issue where the player bar wasn't able to play or pause songs, nor could it move to the previous or next song.  
 
+{% highlight javascript %}
+var clickHandler = function(){
+       var songNumber = parseInt($(this).attr('data-song-number'));
+
+       if (currentlyPlayingSongNumber !== null) {
+       var currentlyPlayingCell = getSongNumberCell(currentlyPlayingSongNumber);
+       currentlyPlayingCell.html(currentlyPlayingSongNumber);
+     }
+       if (currentlyPlayingSongNumber !== songNumber) {
+       $(this).html(pauseButtonTemplate);
+       setSong(songNumber);
+       currentSoundFile.play();
+       updateSeekBarWhileSongPlays()
+       updatePlayerBarSong();
+       var $volumeFill = $('.volume .fill');
+       var $volumeThumb = $('.volume .thumb');
+       $volumeFill.width(currentVolume + '%');
+       $volumeThumb.css({left: currentVolume + '%'});
+
+     } else if (currentlyPlayingSongNumber === songNumber) {
+             if (currentSoundFile.isPaused()) {
+                $(this).html(pauseButtonTemplate);
+                $('.main-controls .play-pause').html(playerBarPauseButton);
+                currentSoundFile.play();
+                updateSeekBarWhileSongPlays()
+            } else {
+                $(this).html(playButtonTemplate);
+                $('.main-controls .play-pause').html(playerBarPlayButton);
+                currentSoundFile.pause();
+             }
+     }
+    };
+    {% endhighlight %}
+
 ## Solution
 
 I learned new concepts from JavaScript and JQuery and applied them to refactoring the vanilla JavaScript into JQuery.  
-We also generated the code and logic needed to get the player bar to play/pause a song as well as move to the next/previous songs in the album list.
+We also generated the code and logic needed to update the player seek bar when a new song is selected as well as the ability to move through the song by clicking on the seek bar.
 
 {% highlight javascript %}
 var setCurrentTimeInPlayerBar = function (currentTime) {
@@ -44,7 +78,7 @@ var setCurrentTimeInPlayerBar = function (currentTime) {
     var value = parseFloat(timeInSeconds);
     //store variable for the whole seconds and whole minutes
     var wholeSeconds = Math.floor(value % 60, 10);
-    //divide timeInSeconds by 60 to get whole minutes?
+    //divide timeInSeconds by 60 to get whole minutes
     var wholeMinutes = Math.floor(value / 60);
     //return the time formatted as X:XX
     return (wholeMinutes + ":" + (wholeSeconds < 10 ? '0' + wholeSeconds : wholeSeconds));
