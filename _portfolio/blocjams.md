@@ -19,7 +19,11 @@ I set up each page as instructed and was given a code challenge for each section
 
 ## Problem
 
-Throughout each challenge new concepts where introduced, I had to learn and assimilate them into my pages.  We also had to refactor our vanilla JavaScript into JQuery to reduce the number of lines of code on the page.  I also had an issue where the player bar wasn't able to play or pause songs, nor could it move to the previous or next song.  The code below handles any clicks when people select the song they wish to hear.  It checks that the song isn't already currently playing (At #1) as well as manages which icon appears based on which state the song is in (At #2).  This block of code also helps keep the seek bars synced with the progress of the current song being played as well as allowing the user to adjust the volume. (At #3 and #4)
+Throughout each challenge new concepts where introduced, I had to learn and assimilate them into my pages.  We also had to refactor our vanilla JavaScript into JQuery to reduce the number of lines of code on the page.  I also had an issue where the player bar wasn't able to play or pause songs, nor could it move to the previous or next song or even change the volume of the song.  
+
+## Solution
+
+To fix the problem of not being able to use the player bar to play or pause songs or be able to seek through a song and adjust it volume we use the code blocks below. The first one checks that the song isn't already currently playing (At #1) as well as manages which icon appears based on which state the song is in (At #2).  This block of code also fires off additional functions that keep seek bars synced with the progress of the current song being played as well as allowing the user to adjust the volume. (At #3 and #4)
 
 {% highlight javascript %}
 var clickHandler = function(){
@@ -62,22 +66,17 @@ var clickHandler = function(){
     };
     {% endhighlight %}
 
-## Solution
-
-I learned new concepts from JavaScript and JQuery and applied them to refactoring the vanilla JavaScript into JQuery.  
-We also generated the code and logic needed to update the player seek bar when a new song is selected as well as the ability to move through the song by clicking on the seek bar.
+This bloc is responsible for all of the data passed into the seek bars, duration, current location in the song, etc.  It makes sure it's data for the currently playing song as well as filters that data to be more readable to humans instead of just outputting a song duration in raw seconds this converts the duration into a readable minutes:seconds format.
 
 {% highlight javascript %}
 var setCurrentTimeInPlayerBar = function (currentTime) {
     //set text of element with .current-time class to current time in the song
     $('.current-time').text(filterTimeCode(currentTime));
-    //add method so current time updates with the song playback
   }
 
   var setTotalTimeInPlayerBar = function (totalTime){
     //set text of element with .total-time class to the length of the song
     $('.total-time').text(filterTimeCode(totalTime));
-    //add method so the total time is set when a song first plays.
   }
 
   var filterTimeCode = function(timeInSeconds){
