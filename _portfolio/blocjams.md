@@ -19,22 +19,26 @@ I set up each page as instructed and was given a code challenge for each section
 
 ## Problem
 
-Throughout each challenge new concepts where introduced, I had to learn and assimilate them into my pages.  We also had to refactor our vanilla JavaScript into JQuery to reduce the number of lines of code on the page.  I also had an issue where the player bar wasn't able to play or pause songs, nor could it move to the previous or next song.  
+Throughout each challenge new concepts where introduced, I had to learn and assimilate them into my pages.  We also had to refactor our vanilla JavaScript into JQuery to reduce the number of lines of code on the page.  I also had an issue where the player bar wasn't able to play or pause songs, nor could it move to the previous or next song.  The code below handles any clicks when people select the song they wish to hear.  It checks that the song isn't already currently playing (At #1) as well as manages which icon appears based on which state the song is in (At #2).  This block of code also helps keep the seek bars synced with the progress of the current song being played as well as allowing the user to adjust the volume. (At #3 and #4)
 
 {% highlight javascript %}
 var clickHandler = function(){
        var songNumber = parseInt($(this).attr('data-song-number'));
-
+       // #1
        if (currentlyPlayingSongNumber !== null) {
        var currentlyPlayingCell = getSongNumberCell(currentlyPlayingSongNumber);
        currentlyPlayingCell.html(currentlyPlayingSongNumber);
      }
        if (currentlyPlayingSongNumber !== songNumber) {
+       // #2
        $(this).html(pauseButtonTemplate);
        setSong(songNumber);
        currentSoundFile.play();
+       // #3
        updateSeekBarWhileSongPlays()
+       // #3
        updatePlayerBarSong();
+       // #4
        var $volumeFill = $('.volume .fill');
        var $volumeThumb = $('.volume .thumb');
        $volumeFill.width(currentVolume + '%');
@@ -42,11 +46,14 @@ var clickHandler = function(){
 
      } else if (currentlyPlayingSongNumber === songNumber) {
              if (currentSoundFile.isPaused()) {
+                // #2
                 $(this).html(pauseButtonTemplate);
                 $('.main-controls .play-pause').html(playerBarPauseButton);
                 currentSoundFile.play();
+                // #3
                 updateSeekBarWhileSongPlays()
             } else {
+                // #2
                 $(this).html(playButtonTemplate);
                 $('.main-controls .play-pause').html(playerBarPlayButton);
                 currentSoundFile.pause();
