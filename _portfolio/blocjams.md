@@ -11,7 +11,7 @@ short-description: BlocJams is a Spotify replica for finding the best music and 
 
 ## Summary
 
-This is a project to reconstruct a replica of Spotify to get familiar with html and css as well as animating with JavaScript and JQuery.
+This is a project to reconstruct a replica of Spotify to get familiar with HTML and CSS as well as animating with JavaScript and JQuery.
 
 ## Explanation
 
@@ -19,8 +19,7 @@ I set up each page as instructed and was given a code challenge for each section
 
 ## Problem
 
-Throughout each challenge new concepts where introduced I had to learn and assimilate them into my pages.  We also had to refactor our vanilla JavaScript into JQuery to reduce the amount of lines of code on the page.  
-I also had an issue where the player bar wasn't able to play or pause songs, nor could it move to the previous or next song.  
+Throughout each challenge new concepts where introduced, I had to learn and assimilate them into my pages.  We also had to refactor our vanilla JavaScript into JQuery to reduce the number of lines of code on the page.  I also had an issue where the player bar wasn't able to play or pause songs, nor could it move to the previous or next song.  
 
 ## Solution
 
@@ -59,4 +58,4 @@ I ended up with a site able to store a vast amount of album collections as well 
 ## Conclusion
 
 This is still a work in progress, but I have learned a lot about JavaScript and JQuery, more specifically while JQuery may make things easier in some respects it is no longer considered best practice.  
-The reason is that the latest versions of HTML/CSS offer much the same functionality as JQuery, as well as new Symantec html that JQuery can't make use of.
+The reason is that the latest versions of HTML/CSS offer much the same functionality as JQuery, as well as new Symantec HTML that JQuery can't make use of.
