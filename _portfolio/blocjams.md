@@ -23,7 +23,7 @@ Throughout each challenge new concepts where introduced, I had to learn and assi
 
 ## Solution
 
-To fix the problem of not being able to use the player bar to play or pause songs or be able to seek through a song and adjust it volume we use the code blocks below. The first one checks that the song isn't already currently playing (At #1) as well as manages which icon appears based on which state the song is in (At #2).  This block of code also fires off additional functions that keep seek bars synced with the progress of the current song being played as well as allowing the user to adjust the volume. (At #3 and #4)
+To fix the problem of not being able to use the player bar to play or pause songs or be able to seek through a song and adjust its volume we use the code blocks below. The clickHandler function checks to see if the selected song is stopped(no song playing), paused or playing (At #1) as well as manages which icon appears based on which state the song is in playing or paused (At #2).  This block of code also fires off additional functions that keep seek bars synced with the progress of the current song being played (At #3).
 
 {% highlight javascript %}
 var clickHandler = function(){
@@ -42,13 +42,13 @@ var clickHandler = function(){
        updateSeekBarWhileSongPlays()
        // #3
        updatePlayerBarSong();
-       // #4
        var $volumeFill = $('.volume .fill');
        var $volumeThumb = $('.volume .thumb');
        $volumeFill.width(currentVolume + '%');
        $volumeThumb.css({left: currentVolume + '%'});
 
      } else if (currentlyPlayingSongNumber === songNumber) {
+             // #1
              if (currentSoundFile.isPaused()) {
                 // #2
                 $(this).html(pauseButtonTemplate);
