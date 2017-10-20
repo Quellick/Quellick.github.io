@@ -10,9 +10,11 @@ https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-gi
 
 First off, I was given a choice of two available themes of which I forked one repo into my GitHub.  I personally use GitHub Desktop as it makes cloning and forking branches a lot easier with its visual layout.  However, if you need the git commands to clone the repo as well as change the remote URL to your repository, they are.
 
+{% highlight commands %}
 $ git clone https://github.com/{username}/{portfolio-xxxx}.git
 
 $ git clone https://github.com/{username}/{portfolio-xxxx}.git
+{% endhighlight %}
 
 Once all that was done I had a bare-bones template in my view and needed to start customizing it.  Within the _config.yml file there are many settings that need to be updated as they apply to you.  The actual site address for your portfolio (if you have a custom domain explained later in the post), username info for various social media, e-mails, site titles and descriptions, etc.  While it is not all required information I would fill in as much as possible, you can always go back and remove what you don't want to show on the page once you're familiar with the layout.  Once completed you should be able to reload the page and see a much more custom version of the theme you selected,  your name and accounts as well as social media icons linking to your username should now be visible.  Now.. about that custom domain.
 
